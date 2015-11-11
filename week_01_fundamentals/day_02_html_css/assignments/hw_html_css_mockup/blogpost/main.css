@@ -1,9 +1,11 @@
 div {
-    border: 5px solid black;
-    padding: 2px;
     position: relative;
 }
-
+#header {
+    left: 100;
+    max-height: 50%;
+    background-color: gray;
+}
 #container {
     background-color: gray;
     position: relative;
@@ -11,36 +13,34 @@ div {
     width: 500px;
 }
 #square1 {
-    background-color: red;
+    width: 100px;
+    position: absolute;
+    top: 100;
+    right: 0;
+}
+.tabtext {
+    color: black;
+    text-align: justify;
+    text-decoration: underline;
+    font-size: 10px;
+}
+
+#square3 {
     height: 200px;
     width: 100px;
     position: absolute;
     top: 0;
-    right: 0;
-}
-#square2 {
-    background-color: blue;
-    height: 200px;
-    width: 100px;
-    clear: right;
-}
-
-#square3 {
-    background-color: green;
-    height: 200px;
-    width: 100px;
-    position: absolute;
-    bottom: 0;
     left: 0;
 }
-
-#square4 {
-    background-color: black;
-    height: 200px;
-    width: 100px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+.thead {
+    text-align: left;
+}
+#square2 {
+    background-color: gray;
+    width: 300px;
+    position:absolute;
+    top: 0;
+    left:100px;
 }
 
 .inline {
