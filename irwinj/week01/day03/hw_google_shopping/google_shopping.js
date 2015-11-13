@@ -49,20 +49,20 @@ var data = require("./products.json")
 // }
 // works, displays only canons
 
-// for (var i = 0; i < data.items.length; i++){
-// 	if(data.items[i].product.author.name===("eBay" + '') && data.items[i].product.brand==="Canon")
-// 	 {
-// 		console.log("Canon on eBay: " + (data.items[i].product.title));
-// 	}
-// }
+for (var i = 0; i < data.items.length; i++){
+	if(data.items[i].product.author.name===("eBay" + *) && data.items[i].product.brand==="Canon")
+	 {
+		console.log("Canon on eBay: " + (data.items[i].product.title));
+	}
+}
 //prints item that is only eBay, couldn't get eBays with stuff after to show
 
-for (var i = 0; i < data.items.length; i++){
-		console.log(data.items[i].product.brand);
-		console.log("$" + data.items[i].product.inventories[0].price);
-		console.log(data.items[i].product.images[0].link);
-		console.log('')
-	}
+// for (var i = 0; i < data.items.length; i++){
+// 		console.log(data.items[i].product.brand);
+// 		console.log("$" + data.items[i].product.inventories[0].price);
+// 		console.log(data.items[i].product.images[0].link);
+// 		console.log('')
+// 	}
 //donezo!
 
 

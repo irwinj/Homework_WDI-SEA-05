@@ -1,0 +1,5 @@
+var changeTextColor = function(element, color) {
+	element.style.color = color;
+	}
+
+var mainTitle = document.getElementById('main-title');
