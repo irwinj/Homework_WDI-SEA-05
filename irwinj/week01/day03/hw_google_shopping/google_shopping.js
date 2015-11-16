@@ -50,7 +50,7 @@ var data = require("./products.json")
 // works, displays only canons
 
 for (var i = 0; i < data.items.length; i++){
-	if(data.items[i].product.author.name===("eBay" + *) && data.items[i].product.brand==="Canon")
+	if(data.items[i].product.author.name.split(' - ')[0] === "eBay" && data.items[i].product.brand==="Canon")
 	 {
 		console.log("Canon on eBay: " + (data.items[i].product.title));
 	}

@@ -1,0 +1,66 @@
+h1 {
+	text-align: center;
+	color: blue;
+	font-weight: bold;
+	font-size: 50px;
+	margin-top: 50px;
+	margin-bottom: 80px;
+}
+
+#grid_container {
+	float: left;
+	position: relative;
+	height: 770px;
+	width: 770px;
+}
+
+.box {
+	height: 250px;
+	width: 250px;
+	float: left;
+	font-size: 200px;
+	text-align: center;
+}
+
+.row1 {
+	border-bottom: 2px solid black;
+}
+
+.row2 {
+	border-bottom: 2px solid black;
+}
+
+.boxB {
+	border-right: 2px solid black;
+	border-left: 2px solid black;
+}
+
+.boxE {
+	border-right: 2px solid black;
+	border-left: 2px solid black;
+}
+
+.boxH {
+	border-right: 2px solid black;
+	border-left: 2px solid black;
+}
+
+h2 { 
+text-align: center;
+margin-top: 100px;
+}
+
+#status_container {
+	float: left;
+	height: 770px;
+	width: 400px;
+}
+
+button{
+	height: 30px;
+	width: 150px;
+	margin: 400px auto;
+	font-size: 20px;
+	font-family: times;
+	display: block;
+}

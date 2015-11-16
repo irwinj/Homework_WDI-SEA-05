@@ -9,8 +9,8 @@
 	font-weight: normal;
 	font-style: normal;
 }
-/* Generic styles */
-body{
+/* Generic Styles */
+body {
 	font-family: arial, sans-serif;
 }
 a {
@@ -18,12 +18,11 @@ a {
 	color: #E44D26;
 }
 a:hover,
-/* apply effect to multiple entries by comma separating */
 a:visited {
 	color: #923C2E;
 }
 
-/* Navigation Styles - select anchor, not the whole link/ thing */
+/* Navigation Styles */
 nav li > a,
 nav li > a:active,
 nav li > a:link,
@@ -37,16 +36,18 @@ nav li > a:visited {
 	font-weight: bold;
 	padding: 0 1em;
 	text-transform: uppercase;
+	height: 26px;
+	line-height: 26px;
 }
 body#home nav li:nth-child(1) a,
-body#about nav li:nth-child(2) a,
-body#glossary nav li:nth-child(3) a {
+body#glossary nav li:nth-child(2) a,
+body#about nav li:nth-child(3) a {
 	background-color: rgba(0,0,0,0.2);
 	border-color: #923C2E;
 	border-radius: 3px;
 }
 
-/*Header Styles */
+/* Header Styles */
 header {
 	background-color: #E44D26;
 	height: 60px;
@@ -70,6 +71,23 @@ header nav {
 header nav ul li {
 	display: inline-block;
 	line-height: 26px;
-	margin: 18 px 0 0;
-	
+	margin: 18px 0 0;
+}
+section {
+
+}
+
+/* Footer Styles */
+footer {
+	background-color: #ED670B;
+	color: #FFF;
+	font-family: Tahoma, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 20px;
+	height: 20px;
+	text-align: center;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
 }

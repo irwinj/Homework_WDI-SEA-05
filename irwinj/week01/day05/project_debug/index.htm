@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form id = 'theForm'>
+		<input type="text">
+		<button type="submit">Click Me!</button>
+	</form>
+	<script type="text/javascript">
+//the GA function, the next two functions don't do anything but he put them here as an example for how to type code correctly
+		// window.GA = {
+		// 	theFunction : function(event){
+		// 		event.preventDefault();
+		// 	}
+		// 	something: 'string',
+		// 	anotherFunc : function(){}
+		// }
+		var theForm = document.getElementById('theForm');
+		
+//prevents website from submitting, prevents page reload with empty values after clear
+
+		theForm.addEventListener('submit', function(event){
+			event.preventDefault();
+//requires two parameters - what action it takes, and an anonymous function, can have something inside (for reference) or be empty
+//console log note: if we add a breakpoint in debugger (console->sources->pause) you can see what has happened in your code up to a point, rather than relying on creating console log
+		});
+	</script>
+</body>
+</html>
