@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<form id="searchForm">
+	<input type="text" id="searchTerm" name="searchTerm" placeholder="Search Reddit">
+	<button type="submit">Search</button>
+<!-- tools-> new snippet to create a search term -->
+</form>
+
+<ul id="items"></ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+<script type="text/javascript">
+	//Functions go here
+	var bindSearch = function(){
+		$('#searchForm').on('submit',function(e){
+			e.preventDefault();
+
+			var inputs = $(this).find('input');
+			var values = {};
+			$.each(inputs, function(index, value){
+				values[this.name] = this.value;
+			});
+			getRedditData(values);
+		});
+		//23 - 28 will be in every form search
+
+	};
+	var getRedditData = function(searchTerms){
+		console.log(searchTerms);
+		$.ajax({
+			method : 'GET',
+			url : 'https://www.reddit.com/r/pics/search.json',
+			data: {
+				'q': searchTerms.searchTerm
+				//reddit api#GET_search parameters, q can be up to 512 characters
+				//if you change reddit search to search.json?q you can get the json datas
+			},
+			success: function(response, textStatus, sink){
+				displayReddit(response.data.children);
+				//diving deeper into the returned data from bindSearch
+			}
+		});
+	}
+	var displayReddit = function(data){
+		$.each(data, function(index, value){
+			var itemsList = $('#items');
+			itemsList.empty();
+			$.each(data, function(index, value){
+				var listItem = $('<li>'+'<img src='+value.data.thumbnail+'>'+'</li>', {
+					html:value.data.thumbnail
+				});
+			// 	//alternate: '<li class="taco cat" + value + '</li>')', but this gets too long quickly
+			// 	var link = $('<a/>',{
+			// 		html : value.data.title,
+			// 		hre : value.data.url,
+			// 		target : '_blank'
+			// 	});
+			// 	//going deeper into the element
+			// });
+			// itemsList.append(listItem.append(link));
+			// $('#items') changed for clarity
+		});
+	});
+	}
+</script>
+<script type="text/javascript">
+	//function calls go here
+	$(document).ready(function(){
+		bindSearch();
+		// bindSearch(){
+		// 	$.each(result, function(
+		// 		<a href=result))
+		});
+</script>
+</body>
+</html>

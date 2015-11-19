@@ -15,19 +15,24 @@
 
 <script type="text/javascript">
 	$('document').ready(function(){
-		GA = GA || {}
+		var GA = GA || {}
 		GA = {
 			numberOfClicks : 0,
+			init : function(){
+				this.bindClick();
+			},
 			bindClick : function(){
 	//"this should bind to clickme and fire incrementclickcount()"
-			}
+			},
 			alertClickNum : function(){
+				alert(this.numberOfClicks);
 				//this should alert the value of numberofclicks
-			}
+			},
 			incrementClickCount : function(){
+				this.numberOfClicks = this.numberOfClicks + 1;
 				//call this from blindclick
 				//this should add to numberofclicks, and update hidden field
-			}
+			},
 		}
 	});
 </script>
