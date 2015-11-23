@@ -1,11 +1,59 @@
-Country JSON
-{alaska : {cont : "NA" //continent its on
+// Country JSON
+var countryData = {alaska : {cont : "NA" //continent its on
 		   borders : ["northwestT", "alberta", "kamchatka"] //what it borders
 		   army: number/null //how many armies within
 		   owner: player/null //who owns it
-		   attack: 0/1 //is in attack state or not
+		   attack: 0/1/2 //is in attack state or not
 		   country value: 1} //same for all countries
 		}
+
+alaska
+northwestTerritory
+alberta
+ontario
+quebec
+greenland
+westernUnitedStates
+easternUnitedStates
+centralAmerica
+
+venezuela
+brazil
+argentina
+
+northAfrica
+egypt
+congo
+eastAfrica
+madagascar
+southAfrica
+
+iceland
+greatBritain
+scandinavia
+northernEurope
+ukraine
+westernEurope
+southernEurope
+
+ukraine
+siberia
+yakutsk
+kamchatka
+irkutsk
+mongolia
+japan
+china
+afghanistan
+middleEast
+india
+siam
+
+indonesia
+newGuinea
+westernAustralia
+easternAustralia
+LotR
 
 Player JSON
 {player1 : {army: 0 to infinity

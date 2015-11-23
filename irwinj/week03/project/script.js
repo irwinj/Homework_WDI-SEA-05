@@ -1,5 +1,3 @@
-var countries = $.load(JSON("~/data.json")
-
 div with a box where you enter number of players (1-6), i
 var numPlay = i
 //number of players - sets $json.(playVar(army)) according to number of players
@@ -8,6 +6,7 @@ var playVar
 //numPlay modified to current player turn
 
 var attackedCountry =
+	($json.countryData(attack))
 
 function allCount(){
 	each.countries()
@@ -26,54 +25,95 @@ function changePlay(){
 	playVar - 1;
 		if playVar = 0, set playVar = numPlay
 } //changes player unless it's 0, then it becomes the number of players
+	
+function diceRoll(playerRoll){
+	playerRoll.push(Math.floor(Math.random()*6)+1);
+}
+var attackerRoll = {};
 
-function diceRoll(){
-	playVar gets (country(Army)-1) dice 
-	(attackedCountry.army) attacked country
-		roll dice
-			compare highest
-				if attackDice(1)=defendDice(1), ($json("attack")=1).set(Army-1)
-					if attackDice(2)>defendDice(2), ($json("attack")=1).set(Army-1)
-			//assign dice according to armies in country, remove armies from countries according to outcomes
-		if attackedCountry(army) = 0, set playVar army = ($json("attack").army); then set $json("attack".army = 0) )
-		clear attackedCountry && ($json("attack")=1) = 0)
-			//clear attack phase
-		switch
+var defenseRoll = {};
+
+function diceRolls(armyCount){
+	armyCount.text - 1
+		if >=3, = diceRoll(attackerRoll) x 3;
+		else = diceRoll(attackerRoll) x value //need to make this work for both
+}	//same for defense up to 2
+
+function sortRolls(){
+	attackerRoll.sort(function(a, b){return a-b});
+	defenseRoll.sort(function(a, b){return a-b});
+}
+
+function armyCount(x){
+	$document.getElementsByClass(($json.countryData(attack:"x"))
+}	//find country name json element in defenseState attack 2, return CSS text field
+//fix variables and this stuff tomorrow querySelector FILTER
+function armyChange(attdef){
+	if ((attackRoll[0] - defenseRoll[0]) > 0){
+		armyCount(1).text - 1, setCSSClassText armyCount
+	else(var x = armyCount(2).text - 1, setCSSClassText armyCount, setCSSClassText)
+}	
+	if ((attackRoll[1] - defenseRoll[1]) > 0)
+		$document.getElementsByClass(($json.countryData(attack:2)).text - 1, setCSSClassText
+		//find json element in defenseState attack 2
+		($document.getElementsByClass(($json.countryData(attack:1)).text - 1, setCSSClassText)
+	} else null //do nothing
+	}//compares sorted arrays, subtracts army from loser 
+	if (armyCount(2).text <= 0) {
+		var y = armyCount(1).text;
+		$json.playVar.army.text + y;
+		armyCount(1).set = 0
+	} //if defense has no armies, move attacker armies to reserve for reapportioning
+	set each.$json.countryData.attack = 0
+	//clear attack state
+	initPop
 }
 
 ENDTURN BUTTON
 	checks if playVar(army) = 0, changePlay()
 	//makes sure player has placed all armies
-		playVar(army) + (playVar(owner) / 3) (minimum 3)
+		playVar(army) + (playVar(owner) / 3) (minimum 3) //need to add a country counter, add countries to an array and return length)
 		//adds armies to playVar(army)
 		somehow check if player countrols continent //save for last
-			switch
-	else alert "You cannot end your turn while you have armies in reserve!"
+			initPop
+			else alert (playVar + "You cannot end your turn while you have armies in reserve!"
 
+// swith(gamestate) {
+// 	case: "init"
+// 		initPop(e);
+// 		break;
+// 	case: "addArmy"
+// 		addArmy(e);
+// 		break;
 
-Switch (gamestate)
-//activated when a player clicks
-	initPop(playVar)
-		break
-	addArmy
-		break
-	playerTurn
-		break
-	cancelAttack
-		break
+// }  no switch since I did a heuristic
+
+// Switch (gamestate)
+// //activated when a player clicks
+// 	initPop(playVar)
+// 		break
+// 	addArmy
+// 		break
+// 	playerTurn
+// 		break
+// 	cancelAttack
+// 		break
+// 	attackPlayer
+// 		break
 
 
 initPop //(SWITCH 1)
 	allCount(armies) = 0
+	else = AddArmy
 	//if any countries have 0 armies, continues
 	playVar(army) > 0
 		else changePlay, switch
 	//and player has more than 0 armies (or it loops back)
 	country(armies) = 0
 	//and the country has no armies (otherwise do nothing)
-		then +1 playerarmy country(armies) && -1 playVar(army)
+		FUNCTION = then +1 playerarmy country(armies) && -1 playVar(army)
 		//adds 1 to country
-		allPlay(owner) = ##, WINNER!
+		allPlay(owner) = ##, WINNER!  //index of player.countries
 			else updates scoreboard //(if I have time)
 		//totals player countries, checks if any player owns the total number of countries, if so they win!
 		changePlay
@@ -106,6 +146,7 @@ playerTurn
 			Highlight chosen country box
 			"Choose Country to attack, or cancel"
 			//changes country to active attack state, highlights box, changes message
+			update gamestate to attackPlayer
 
 cancelAttack
 	if country(attack) = 1, country(attack) = 0

@@ -1,0 +1,81 @@
+
+header {
+	text-align: center;
+}
+.gameboard {
+	background-image: url('images/worldmap.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
+	height: 100%;
+	max-height: 800px;
+	max-width: 1280px;
+	margin: 0 auto;
+	min-height:800px;
+	min-width: 1280px;
+	text-align: center;
+}
+h1 {
+	font-size: 30px;
+	text-align: center;
+}
+h2 {
+	font-size: 23px;
+}
+
+.countries {
+	font-size: 15px;
+	position: absolute;
+}
+.alaska {
+	top: 20;
+	left: 100;
+	background-color: yellow
+}
+/*
+northwestTerritory
+alberta
+ontario
+quebec
+greenland
+westernUnitedStates
+easternUnitedStates
+centralAmerica
+
+venezuela
+brazil
+argentina
+
+northAfrica
+egypt
+congo
+eastAfrica
+madagascar
+southAfrica
+
+iceland
+greatBritain
+scandinavia
+northernEurope
+ukraine
+westernEurope
+southernEurope
+
+ukraine
+siberia
+yakutsk
+kamchatka
+irkutsk
+mongolia
+japan
+china
+afghanistan
+middleEast
+india
+siam
+
+indonesia
+newGuinea
+westernAustralia
+easternAustralia
+LotR*/
