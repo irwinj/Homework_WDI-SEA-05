@@ -1,8 +1,7 @@
-// Country JSON
-{
+var countries = {
 "alaska" : {"cont"  : "na", //continent its on
 		   "borders" : ["northwestTerritory", "alberta", "kamchatka"], //what it "borders"
-		   "army" : "", //how many armies within
+		   "army" : "25", //how many armies within
 		   "owner"   : "", //who owns it
 		   "attack"  : "", //is in "attack" state or not
 		},
