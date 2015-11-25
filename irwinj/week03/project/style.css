@@ -1,6 +1,11 @@
 header {
 	text-align: center;
 }
+#button1 {
+	font-size: 15px;
+	width: 200px;
+	margin: 0 auto;
+}
 .gameboard {
 	background-image: url('images/worldmap.jpg');
 	background-repeat: no-repeat;
@@ -36,6 +41,8 @@ h1 {
 .countries {
 	font-size: 15px;
 	position: absolute;
+	cursor: pointer;
+	padding: 5px;
 }
 #alaska {
 	margin-top: 7px;
