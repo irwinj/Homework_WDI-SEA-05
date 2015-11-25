@@ -1,7 +1,7 @@
 
 var player = {}; //stores player reserves //used to change players, check if <=6
 var playerTurn = 1;
-var playColor = player[playerTurn]
+
 setPlayers();  //calls setPlayers() function
 startPlay(); //added to test jquery
 // $('.h1').html(countryData.currentCountry.army) //this is how we'll change CSS to reflect json
@@ -12,7 +12,7 @@ function changePlay(){ //changes player, checks for player.length, calls initPop
 		playerTurn = 1;
 	}
 	console.log(playerTurn);
-	initPop();
+	startPlay();
 }
 // set number of players (2-6), distributes armies to players which allows initpop to work
 function setPlayers() {
@@ -95,41 +95,38 @@ function checkPlayReserveFree()	{
 			} //do nothing if value isn't 0
 		});
 	} else {
-		$('#status').text("Player" + playerTurn + "place your remaining armies!")
+		$('#status').text("Player" + playerTurn + " place your remaining armies!")
 		changePlay();//if Player doesn't have reserves, others must, change player
 	} 
 } 
-// function bgcolor (){
-// 	var bgcolor1= player1.owner
-// 	bgcolor1.forEach(){
-// 		css background-color: red
-// 	}var bgcolor2= player1.owner
-// 	bgcolor2.forEach(){
-// 		css background-color: yellow
-// 	}var bgcolor3= player1.owner
-// 	bgcolor3.forEach(){
-// 		css background-color: purple
-// 	}var bgcolor4= player1.owner
-// 	bgcolor4.forEach(){
-// 		css background-color: orange
-// 	}var bgcolor5= player1.owner
-// 	bgcolor5.forEach(){
-// 		css background-color: green
-// 	}var bgcolor6= player1.owner
-// 	bgcolor6.forEach(){
-// 		css background-color: pink
-// 	}
-// }
+
+function playColor(countrycol){
+	if (player['player' + playerTurn] == player['player1']) {
+		countrycol.css('background-color', '#00ff00'); //neon green
+	} else if (player['player' + playerTurn] == player['player2']) {
+		countrycol.css('background-color', '#FF00FF '); //neon pink
+	} else if (player['player' + playerTurn] == player['player3']) {
+		countrycol.css('background-color', '#993CF3'); //neon purple
+	} else if (player['player' + playerTurn] == player['player4']) {
+		countrycol.css('background-color', '#4D4DFF'); //neon blue
+	} else if (player['player' + playerTurn] == player['player5']) {
+		countrycol.css('background-color', '#FF4105 '); //neon orange
+	} else if (player['player' + playerTurn] == player['player6']) {
+		countrycol.css('background-color', '#FE0001'); //neon red
+	}
+}
 
 function addArmyFree(country) {
 	var armyAmount = parseInt(country.text());
+	var countrycol = country
 	armyAmount += 1;
 	country.text(armyAmount); //clicked country adds one army
 	// functioncountry.css(background-color)
 	player['player' + playerTurn].reserve-- //remove one from reserve
 	console.log('Player' + playerTurn, player['player' + playerTurn].reserve);
 	player['player' + playerTurn].owner.push(country.attr('id')); //sets owner to current player
-	// bgcolor();
+	// country.css('background-color', 'red'); //this worksworks
+	playColor(countrycol);
 	if (player['player' + playerTurn].owner.length == 42) { //checks for winner
 		alert (player[playerName] + "wins!") //sam's fancy alerts
 	} 
@@ -157,19 +154,16 @@ function checkPlayReserveTaken() {
 			addArmyTaken($(this)[0]);
 		});
 	});
-	$('#status').text("Player" + playerTurn + "place your remaining armies!") //wrong player
+	$('#status').text("Player" + playerTurn + " place your remaining armies!") //wrong player
 } 
 
 function addArmyTaken(country) {
 	var armyAmount = parseInt(country.innerHTML);
 	armyAmount += 1;
 	country.innerHTML = armyAmount; //clicked country adds one army
-	// functioncountry.css(background-color)
 	player['player' + playerTurn].reserve--
 	changePlay();
 }
-
-
 
 
 
@@ -180,7 +174,6 @@ var attackerCountry; //var for country offense
 var defenserCountry; //variable for defense country
 
 function declareAtt(){ //player clicks one of his own countries
-	// $('.countries').unbind();
 	player['player' + playerTurn].owner.forEach(function(country) { //checks if player owns country
 			$('#' + country).click(function(){
 				attackCountry(country);
@@ -254,7 +247,7 @@ function rollDice() {
 	compareRolls2();
 	checkDefense();
 	clearAttack();
-	initPop();
+	startPlay();
 	//initpop?
 }
 // diceroll - need to push to attack/defense array
@@ -295,9 +288,9 @@ function compareRolls2(){
 function removeCountryFromOwner(country){
 	var countryIndex;
 	$.each(player, function(playerName, val){
-		if(val === 'owner'){
-			if(val.indexOf(country) > -1){
-				countryIndex = val.indexOf(country);
+		if(val === 'owner'){ //searching for the player which owns the country
+			if(val.indexOf(country) > -1){ //find the index of the country
+				countryIndex = val.indexOf(country); //store the index
 				player.playerName.owner.splice(countryIndex, 1); //remove country after it's found
 				return true;
 			}
@@ -326,7 +319,7 @@ $('#button1').click(function(){
 		changePlay();
 	}
 });
-//$('.countries').trigger('click');
+//$('.countries').trigger('click');  POPULATES THE GAME QUICKLY
 // not necessary TODOS:
 
 // 		playChange();

@@ -2,9 +2,8 @@ header {
 	text-align: center;
 }
 #button1 {
-	font-size: 15px;
-	width: 200px;
-	margin: 0 auto;
+	font-size: 10px;
+	width: 100px;
 }
 .gameboard {
 	background-image: url('images/worldmap.jpg');
@@ -19,10 +18,7 @@ header {
 	min-width: 1280px;
 	text-align: center;
 }
-/*activate this style when player1 clicks*/
-.player1Name { 
-	background-color: red;
-}
+
 /*blinker animation when country is selected
 $('.player').addClass('blink-me'
 find a way to clear country color too
@@ -35,222 +31,225 @@ h1 {
 #status {
 	font-size: 20px;
 	color:#F9EAA9;
-	bottom: 0px;
 }
 
 .countries {
-	font-size: 15px;
+	font-size: 20px;
 	position: absolute;
 	cursor: pointer;
-	padding: 5px;
+	border-radius:9px;
+	opacity: .8;
+	color: black;
+	font-weight: bold;
+	background-color: whitesmoke;
 }
 #alaska {
 	margin-top: 7px;
 	margin-left: 90px;
-	background-color: yellow
+	
 }
 #northwestTerritory {
 	margin-top: 9px;
 	margin-left: 214px;
-	background-color: yellow
+	
 }
 #alberta {
 	margin-top: 57px;
 	margin-left: 214px;
-	background-color: yellow
+	
 }
 #ontario {
 	margin-top: 40px;
 	margin-left: 300px;
-	background-color: yellow
+	
 }
 #quebec {
 	margin-top: 58px;
 	margin-left: 373px;
-	background-color: yellow
+	
 } 
 #greenland {
 	margin-top: -20px;
 	margin-left: 478px;
-	background-color: yellow
+	
 }
 #westernUnitedStates {
 	margin-top: 124px;
 	margin-left: 259px;
-	background-color: yellow
+	
 }
 #easternUnitedStates {
 	margin-top: 131px;
 	margin-left: 335px;
-	background-color: yellow
+	
 }
 #centralAmerica {
 	margin-top: 196px;
 	margin-left: 280px;
-	background-color: yellow
+	
 }
 #venezuela {
 	margin-top: 290px;
 	margin-left: 396px;
-	background-color: yellow
+	
 }
 #brazil {
 	margin-top: 344px;
 	margin-left: 463px;
-	background-color: yellow
+	
 }
 #argentina {
 	margin-top: 417px;
 	margin-left: 414px;
-	background-color: yellow
+	
 }
 #northAfrica {
 	margin-top: 234px;
 	margin-left: 628px;
-	background-color: yellow
+	
 }
 #egypt {
 	margin-top: 204px;
 	margin-left: 723px;
-	background-color: yellow
+	
 }
 #congo {
 	margin-top: 307px;
 	margin-left: 692px;
-	background-color: yellow
+	
 }
 #eastAfrica {
 	margin-top: 332px;
 	margin-left: 748px;
-	background-color: yellow
+	
 }
 #madagascar {
 	margin-top: 390px;
 	margin-left: 810px;
-	background-color: yellow
+	
 }
 #southAfrica {
 	margin-top: 416px;
 	margin-left: 716px;
-	background-color: yellow
+	
 }
 #iceland {
 	margin-top: 29px;
 	margin-left: 564px;
-	background-color: yellow
+	
 }
 #greatBritain {
 	margin-top: 51px;
 	margin-left: 637px;
-	background-color: yellow
+	
 }
 #scandinavia {
 	margin-top: 0px;
 	margin-left: 716px;
-	background-color: yellow
+	
 }
 #northernEurope {
 	margin-top: 76px;
 	margin-left: 682px;
-	background-color: yellow
+	
 }
 #ukraine {
 	margin-top: 57px;
 	margin-left: 765px;
-	background-color: yellow
+	
 }
 #westernEurope {
 	margin-top: 123px;
 	margin-left: 617px;
-	background-color: yellow
+	
 }
 #southernEurope {
 	margin-top: 106px;
 	margin-left: 692px;
-	background-color: yellow
+	
 }
 #russia {
 	margin-top: 29px;
 	margin-left: 858px;
-	background-color: yellow
+	
 }
 #siberia {
 	margin-top: 15px;
 	margin-left: 956px;
-	background-color: yellow
+	
 }
 #yakutsk {
 	margin-top: -32px;
 	margin-left: 1058px;
-	background-color: yellow
+	
 }
 #kamchatka {
 	margin-top: 3px;
 	margin-left: 1178px;
-	background-color: yellow
+	
 }
 #irkutsk {
 	margin-top: 37px;
 	margin-left: 1050px;
-	background-color: yellow
+	
 }
 #mongolia {
 	margin-top: 104px;
 	margin-left: 1061px;
-	background-color: yellow
+	
 }
 #japan {
 	margin-top: 159px;
 	margin-left: 1125px;
-	background-color: yellow
+	
 }
 #china {
 	margin-top: 148px;
 	margin-left: 987px;
-	background-color: yellow
+	
 }
 #afghanistan {
 	margin-top: 99px;
 	margin-left: 846px;
-	background-color: yellow
+	
 }
 #middleEast {
 	margin-top: 168px;
 	margin-left: 786px;
-	background-color: yellow
+	
 }
 #india {
 	margin-top: 198px;
 	margin-left: 909px;
-	background-color: yellow
+	
 }
 #siam {
 	margin-top: 224px;
 	margin-left: 1000px;
-	background-color: yellow
+	
 }
 #indonesia {
 	margin-top: 319px;
 	margin-left: 1032px;
-	background-color: yellow
+	
 }
 #newGuinea {
 	margin-top: 314px;
 	margin-left: 1160px;
-	background-color: yellow
+	
 }
 #westernAustralia {
 	margin-top: 379px;
 	margin-left: 1032px;
-	background-color: yellow
+	
 }
 #easternAustralia {
 	margin-top: 420px;
 	margin-left: 1142px;
-	background-color: yellow
+	
 }
 #LotR {
 	margin-top: 471px;
 	margin-left: 1242px;
-	background-color: yellow
+	
 }
