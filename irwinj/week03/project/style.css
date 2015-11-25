@@ -14,6 +14,14 @@ header {
 	min-width: 1280px;
 	text-align: center;
 }
+/*activate this style when player1 clicks*/
+.player1Name { 
+	background-color: red;
+}
+/*blinker animation when country is selected
+$('.player').addClass('blink-me'
+find a way to clear country color too
+*/
 h1 {
 	font-size: 28px;
 	text-align: center;

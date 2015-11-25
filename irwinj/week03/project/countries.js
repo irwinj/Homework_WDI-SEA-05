@@ -1,9 +1,9 @@
 var countries = {
-"alaska" : {"cont"  : "na", //continent its on
-		   "borders" : ["northwestTerritory", "alberta", "kamchatka"], //what it "borders"
-		   "army" : "25", //how many armies within
-		   "owner"   : "", //who owns it
-		   "attack"  : "", //is in "attack" state or not
+"alaska" : {"cont"  : "na",
+		   "borders" : ["northwestTerritory", "alberta", "kamchatka"],
+		   "army" : "25",
+		   "owner"   : "",
+		   "attack"  : "",
 		},
 "northwestTerritory" : {"cont" : "na", 
 		   "borders" : ["alaska", "greenland", "ontario", "alberta"],
