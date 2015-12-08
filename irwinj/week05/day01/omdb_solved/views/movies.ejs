@@ -1,0 +1,14 @@
+<h1>Search Results</h1>
+
+<% movies.forEach(function(movie) { %>
+<div class="well">
+  <a href="<%= '/movies/' + movie.imdbId + '/?q=' + q %>">
+  	<h2><%= movie.Title %></h2>
+  </a>
+  <form method="post" action="/favorites">
+	  <input type="hidden" name="imdbId" value="<%= movie.imdbId %>">
+	  <input type="hidden" name="Year" value="<%= movie.Year %>">
+	  <input type="hidden" name="Title" value="<%= movie.Title %>">
+	  <input type="submit" class="btn btn-primary" value="Add to favorites">
+</div>
+<% }); %>
