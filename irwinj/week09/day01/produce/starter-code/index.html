@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="VegApp">
+    <head>
+        <title>Fruit and Veggies</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+        <script src="js/fruit_and_veggies_test.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+    <body>
+        <div class="container" ng-controller="GameCtrl">
+            <h1>Fruit and Veggies</h1>
+            <div class="row">
+                <strong>
+                    <div>
+                        <div class="col-sm-4">
+                            Fruits
+                        </div>
+                        <div class="col-sm-4">
+                            Pool
+                        </div>
+                        <div class="col-sm-4">
+                            Veggies
+                        </div>                        
+                    </div>
+                </strong>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <ul>
+                        <li ng-repeat="fruit in fruits">
+                        {{fruit}}
+                        <button ng-click="notFruit(fruit)" class="btn btn-sm btn-primary btn-right">--></button></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 well choices">
+                    <ul>
+                        <li ng-repeat="produce in produces">
+                        <button ng-click="isFruit(produce)" class="btn btn-sm btn-primary btn-left"><--</button>
+                        {{produce}}
+                        <button ng-click="isVegetable(produce)" class="btn btn-sm btn-primary btn-right">--></button></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <ul>
+                        <li ng-repeat="vegetable in veggies"><button ng-click="notVegetable(vegetable)" class="btn btn-sm btn-primary btn-left"><--</button>
+                        {{vegetable}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

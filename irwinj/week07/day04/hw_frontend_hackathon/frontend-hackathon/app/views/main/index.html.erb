@@ -1,0 +1,5 @@
+<h1>Yelp Stuff</h1>
+<% @data.businesses.each do |item| %>
+  <div><%= item.name %></div>
+  <img src="<%= item.image_url %>">
+<% end %>

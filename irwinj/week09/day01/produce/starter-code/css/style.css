@@ -1,0 +1,9 @@
+/* file for your css */
+
+ul > li {
+	list-style: none;
+}
+
+.row {
+	text-align: center;
+}

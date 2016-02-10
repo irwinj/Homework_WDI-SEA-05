@@ -1,0 +1,28 @@
+form {
+    margin: 0 auto;
+    text-align: center;
+}
+
+ul {
+    text-align: center;
+    margin: 0 auto;
+    list-style: none;
+}
+
+li {
+    padding-top: 50px;
+}
+
+form {
+    width: 33%;
+}
+
+p {
+    margin-top: 50px;
+    width: 33%;
+    margin-left: 34%;
+}
+
+h1 {
+    text-align: center;
+}

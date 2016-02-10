@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="AirplaneApp">
+<head>
+	<base href="/">
+	<title>Airplanes</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+​<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-resource.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-animate.js"></script>
+<script src="app/services.js"></script>
+<script src="app/controllers.js"></script>
+<script src="app/app.js"></script>
+<style type="text/css">
+  .container.ng-hide-remove{
+    animation: bounceIn 1s;
+  }
+  .container.ng-hide {
+    animation: bounceOut 1s;
+    opacity: 1;
+  }
+  .container.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+  }
+  .container.ng-hide.ng-hide-active {
+    opacity: 0;
+  }
+  .item.ng-enter, .item.ng-move {
+    animation: flipInX 1s;
+    opacity: 0;
+  }
+  .item.ng-leave {
+    animation: flipOutX 1s;
+    opacity: 1;
+  }
+  .item.ng-enter.ng-enter-active,
+  .item.ng-move.ng-move-active {
+    opacity: 1;
+  }
+  .item.ng-leave.ng-leave-active {
+    opacity: 0;
+  }
+  </style>
+</head>
+<body>
+	<div class="container">
+		<ng-view></ng-view>
+	</div>
+</body>
+</html>

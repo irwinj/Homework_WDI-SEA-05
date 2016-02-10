@@ -21,28 +21,28 @@ function setPlayers() {
 		for (var i = 1; i <= parseInt(playNum); i++) {
 			var playerName = 'player' + i;
 			player[playerName] = {};
-			player[playerName].reserve = 35;
+			player[playerName].reserve = 25;
 			player[playerName].owner = [];
 		}
 	} else if (playNum === '3') {
 		for (var i = 1; i <= parseInt(playNum); i++) {
 			var playerName = 'player' + i;
 			player[playerName] = {};
-			player[playerName].reserve = 30;
+			player[playerName].reserve = 20;
 			player[playerName].owner = [];
 		}
 	} else if (playNum === '4') {
 		for (var i = 1; i <= parseInt(playNum); i++) {
 			var playerName = 'player' + i;
 			player[playerName] = {};
-			player[playerName].reserve = 25;
+			player[playerName].reserve = 15;
 			player[playerName].owner = [];
 		}
 	} else if (playNum === '5') {
 		for (var i = 1; i <= parseInt(playNum); i++) {
 			var playerName = 'player' + i;
 			player[playerName] = {};
-			player[playerName].reserve = 20;
+			player[playerName].reserve = 10;
 			player[playerName].owner = [];
 		}
 	} else if (playNum === '6') {
@@ -57,13 +57,13 @@ function setPlayers() {
 	}
 }
 function startPlay(){
-	$('#status').html("Player" + playerTurn + " place an army on an open country!");//not showing
+	$('#status').html("Player" + playerTurn + " place an army on an open country!");
 	initPop();
 }
 
 
 function initPop(){ //populate empty countries, declare winner
-	var fullCountries;
+	var fullCountries = false;
 	var oneIsEmpty = false;
 	$('.countries').each(function(index, value){
 		if ($(value).text() == '0'){ //if i want to compare to text, parseInt function call
@@ -79,6 +79,7 @@ function initPop(){ //populate empty countries, declare winner
 	}
 
 	if (fullCountries) {
+		console.log('Shawn said so')
 		$('#status').text("Player" + playerTurn + " place your remaining armies!");
 		regPop();
 	}
@@ -118,7 +119,6 @@ function playColor(countrycol){
 
 function addArmyFree(country) {
 	var armyAmount = parseInt(country.text());
-	var countrycol = country
 	armyAmount += 1;
 	country.text(armyAmount); //clicked country adds one army
 	// functioncountry.css(background-color)
@@ -126,7 +126,7 @@ function addArmyFree(country) {
 	console.log('Player' + playerTurn, player['player' + playerTurn].reserve);
 	player['player' + playerTurn].owner.push(country.attr('id')); //sets owner to current player
 	// country.css('background-color', 'red'); //this worksworks
-	playColor(countrycol);
+	playColor(country);
 	if (player['player' + playerTurn].owner.length == 42) { //checks for winner
 		alert (player[playerName] + "wins!") //sam's fancy alerts
 	} 
@@ -247,7 +247,7 @@ function rollDice() {
 	compareRolls2();
 	checkDefense();
 	clearAttack();
-	startPlay();
+	initPop();
 	//initpop?
 }
 // diceroll - need to push to attack/defense array
@@ -287,25 +287,29 @@ function compareRolls2(){
 
 function removeCountryFromOwner(country){
 	var countryIndex;
-	$.each(player, function(playerName, val){
-		if(val === 'owner'){ //searching for the player which owns the country
-			if(val.indexOf(country) > -1){ //find the index of the country
-				countryIndex = val.indexOf(country); //store the index
-				player.playerName.owner.splice(countryIndex, 1); //remove country after it's found
-				return true;
-			}
+	$.each(player, function(playerName, val){ //val is looping country array
+		// if(val === 'owner'){ //searching for the player which owns the country
+		if(val === country) {
+			console.log(val.indexOf(country));
+			// if(val.indexOf(country) > -1){ //find the index of the country
+			countryIndex = val.indexOf(country); //store the index
+			console.log(countryIndex);
+			player.playerName.owner.splice(countryIndex, 1); //remove country after it's found
+			return true;
 		}
 	});
 }
+
 function checkDefense(){
-	if (parseInt($('#' + defenserCountry).text()) <= 0) {//update numbers on map
+	var countryArmy = parseInt($('#' + defenserCountry).text());
+	if (countryArmy <= 0) {//update numbers on map
 		removeCountryFromOwner(defenserCountry);
-		var addReserve = parseInt($('#' + defenserCountry).text())
+		var addReserve = parseInt($('#' + attackerCountry).text());
 		player['player' + playerTurn].reserve = addReserve;
-		$('#' + defenserCountry).text(0)
-		$('#' + attackerCountry).text(0)
-		attackerCountry.owner = null;
-		console.log(attackerCountry.reserve)
+		console.log(player['player' + playerTurn].reserve);
+		$('#' + defenserCountry).text(0);
+		$('#' + attackerCountry).text(0);
+		removeCountryFromOwner(attackerCountry);
 	} //should go back to initpop for place
 }
 
@@ -322,8 +326,6 @@ $('#button1').click(function(){
 //$('.countries').trigger('click');  POPULATES THE GAME QUICKLY
 // not necessary TODOS:
 
-// 		playChange();
-// 	}
 // 
 // show dice rolls
 

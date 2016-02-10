@@ -1,0 +1,33 @@
+<ul>
+
+    <form action="/" method="GET" role="form">
+        <h1>Search for a movie</h1>
+        <div class="form-group">
+            <input type="text" class="form-control" id="" name="q" placeholder="Movie Title">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+    <% results.forEach(function(info){ 
+    
+    if(info.Poster !== 'N/A'){
+        var pic = info.Poster;    
+    }
+    else {
+        var pic =  'http://placehold.it/300x400';
+    }%>
+    <li><h1> <%= info.Title%> </h1> <h3><%= info.Year %> <br></h3><img src="<%= pic%>" > <p>Description: <br> <%=info.Plot%> <br></p><h2>Rating: <%= info.imdbRating%> </h2> <br> 
+      
+       <form method="POST" action="/">
+           <input type="hidden" value="<%= info.imdbID%>" name="imdbID" >
+           <input type="hidden" value="<%= info.Title%>" name="title" >
+           <input type="hidden" value="<%= info.Year%>" name="year" >
+
+        <input type="submit" value="Favorite" class="btn btn-primary">
+        </form> <li/>
+    <% }); %>
+    
+    
+
+</ul>
