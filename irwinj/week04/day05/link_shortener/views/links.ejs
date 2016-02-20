@@ -1,0 +1,7 @@
+<% include partials/header.ejs %>
+
+<% links.forEach(function(link, index){ %>
+	<div>Long link:<%= link.URL %> with short link: <%= link.shortUrl() %> has been clicked <%= link.accessCount %> times.</div>
+<% }); %>
+
+<% include partials/footer.ejs %>

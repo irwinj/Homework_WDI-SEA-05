@@ -1,0 +1,6 @@
+<% include partials/header.ejs %>
+
+<p>Your original URL is  <%= link.URL %> </p>
+<p>Your shortened link is <a href="<%= link.shortUrl() %>"><%= link.shortUrl() %></a> </p>
+
+<% include partials/footer.ejs %>

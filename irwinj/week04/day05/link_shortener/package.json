@@ -1,0 +1,28 @@
+{
+  "name": "link_shortener",
+  "version": "1.0.0",
+  "description": "homework for week 4 day 5",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:irwinj/irwinly.git"
+  },
+  "author": "irwinj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irwinj/irwinly/issues"
+  },
+  "homepage": "https://github.com/irwinj/irwinly#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "hashids": "^1.0.2",
+    "pg": "^4.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.14.2"
+  }
+}
